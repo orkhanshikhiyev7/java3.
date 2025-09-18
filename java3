@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class hometask3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Mehsulun adini daxil edin: ");
+        String mehsul= sc.nextLine();
+        System.out.println("Mehsulun miqdarini daxil edin: ");
+        int miqdar=sc.nextInt();
+        double qiymet=0.0;
+        if(mehsul.equals("Sud")){
+            qiymet=2.50;
+        }else if(mehsul.equals("Yumurta")){
+            qiymet=0.30;
+        }else if(mehsul.equals("Corek")){
+            qiymet=1.20;
+        }
+        double ilkinMebleg=qiymet*miqdar;
+        double endirimFaizi=0.0;
+        if(ilkinMebleg>10.0){
+            double odenilecekMebleg=ilkinMebleg/20*19;
+             endirimFaizi=5.0;
+        }else if(ilkinMebleg>5 && ilkinMebleg<10){
+            double odenilecekMebleg=ilkinMebleg/50*49;
+             endirimFaizi=2.0;
+        }
+        System.out.println("Mehsul-"+mehsul);
+        System.out.println("Miqdar-"+miqdar);
+        System.out.println("Ilkin qiymet-"+ilkinMebleg);
+        System.out.println("Son qiymet-"+(ilkinMebleg-ilkinMebleg/100.0*endirimFaizi));
+
+    }
+}
